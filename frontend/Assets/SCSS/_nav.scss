@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  max-width: 1024px;
+  align-items: flex-start;
+  margin: 0 auto;
+
+  .logo {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    max-width: 30%;
+  }
+
+  &-nav {
+    display: flex;
+    width: 70%;
+    justify-content: flex-end;
+
+    .nav-link {
+      line-height: 4rem;
+    }
+  }
+}
