@@ -1,25 +1,21 @@
 .navbar {
-  display: flex;
-  height: 4rem;
   width: 100%;
-  max-width: 1024px;
-  align-items: flex-start;
-  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
 
-  .logo {
-    display: flex;
-    height: 4rem;
-    align-items: center;
-    max-width: 30%;
-  }
+.navbar-nav {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
 
-  &-nav {
-    display: flex;
-    width: 70%;
-    justify-content: flex-end;
-
-    .nav-link {
-      line-height: 4rem;
-    }
+  .nav-link {
+    font-family: museo_sans_rounded500;
+    line-height: 4rem;
+    text-decoration: none;
   }
 }
