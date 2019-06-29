@@ -10,12 +10,15 @@
 .navbar-nav {
   display: flex;
   width: 70%;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
+  li {
+    padding: 0.5rem;
+  }
+
   .nav-link {
-    font-family: museo_sans_rounded500;
-    line-height: 4rem;
+    font-family: $msr700;
     text-decoration: none;
   }
 }
