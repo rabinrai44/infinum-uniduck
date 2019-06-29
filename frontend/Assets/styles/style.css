@@ -20,21 +20,9 @@
   font-family: museo_sans_rounded700;
   src: url(../Fonts/MuseoSansRounded-700.otf) format("opentype"); }
 
-@font-face {
-  font-family: museo_sans_rounded900;
-  src: url(../Fonts/MuseoSansRounded-900.otf) format("opentype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: museo_sans_rounded1000;
-  src: url(../Fonts/MuseoSansRounded-1000.otf) format("opentype");
-  font-weight: normal;
-  font-style: normal; }
-
 html,
 body {
-  font-family: museo_sans_rounded100; }
+  font-family: 'museo_sans_rounded100', sans-serif; }
 
 h3 {
   font-size: 1.2rem; }
@@ -88,6 +76,15 @@ img {
     justify-content: flex-end; }
     .navbar-nav .nav-link {
       line-height: 4rem; }
+
+.container {
+  display: flex;
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1236px; }
 
 .heading {
   font-size: 1.25rem; }
