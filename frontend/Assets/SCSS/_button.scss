@@ -20,4 +20,16 @@
       background-color: darken($primary_color, 10%);
     }
   }
+
+  &-small {
+    background-color: lighten($secondary_color, 30%);
+    color: $secondary_color;
+    padding: 0.4rem 1rem;
+    font-family: $msr300;
+    text-transform: capitalize;
+
+    &:hover {
+      color: $white;
+    }
+  }
 }

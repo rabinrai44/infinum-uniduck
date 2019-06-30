@@ -1,0 +1,44 @@
+.blog-featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-img,
+  &-post {
+    width: 50%;
+  }
+}
+
+.meta-header {
+}
+
+.meta {
+  &-content {
+  }
+  &-date {
+    color: lighten($secondary_color, 10%);
+    font-size: 0.9375rem;
+    padding-left: 0.1rem;
+  }
+  &-tag {
+    display: flex;
+    max-width: 90%;
+    padding: 0.75rem 0;
+
+    .item {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    padding: 0.75rem 0;
+
+    .meta-like {
+      margin-right: 0.5rem;
+    }
+  }
+}
