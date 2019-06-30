@@ -208,14 +208,23 @@ a {
   font-family: museo_sans_rounded500;
   font-size: 1.85rem;
   line-height: 1.4; }
+  @media only screen and (max-width: 600px) {
+    .heading {
+      font-size: 1.35rem; } }
   .heading-featured {
-    font-size: 2.5rem; }
+    font-size: 1.75rem; }
+    @media only screen and (min-width: 768px) {
+      .heading-featured {
+        font-size: 2.5rem; } }
   .heading-primary {
     color: #dc4ba3 !important; }
 
 .hero {
   width: 100%;
   padding: 6rem 0; }
+  @media only screen and (max-width: 600px) {
+    .hero {
+      padding: 4rem 0; } }
   .hero-content {
     display: flex;
     align-self: center;
@@ -227,6 +236,9 @@ a {
   color: #dc4ba3;
   text-align: center;
   font-size: 3.5rem; }
+  @media only screen and (max-width: 600px) {
+    .hero-title {
+      font-size: 2rem; } }
 
 .search-bar {
   width: 100%; }
@@ -244,16 +256,28 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 600px) {
+    .blog-featured {
+      flex-direction: column; } }
   .blog-featured-img, .blog-featured-post {
     width: 50%; }
+    @media only screen and (max-width: 600px) {
+      .blog-featured-img, .blog-featured-post {
+        width: 100%; } }
 
 .blog-posts {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
+  @media only screen and (max-width: 600px) {
+    .blog-posts {
+      flex-direction: column; } }
   .blog-posts .blog-post {
     width: 30%;
     margin: 1rem 0; }
+    @media only screen and (max-width: 600px) {
+      .blog-posts .blog-post {
+        width: 100%; } }
   .blog-posts .loadmore {
     display: block;
     text-align: center;
@@ -268,9 +292,10 @@ a {
 .meta-tag {
   display: flex;
   max-width: 90%;
-  padding: 0.75rem 0; }
+  padding: 0.75rem 0;
+  flex-wrap: wrap; }
   .meta-tag .item {
-    margin-right: 0.5rem; }
+    margin: 0.2rem 0.5rem 0.2rem 0; }
 
 .meta-footer {
   display: flex;
@@ -286,6 +311,12 @@ a {
   border-top: 1px solid #dadada;
   padding: 4rem 0;
   width: 100%; }
+  @media only screen and (max-width: 600px) {
+    .footer {
+      padding: 2rem 0; } }
+  .footer .site-copyright {
+    margin-bottom: 1rem;
+    text-align: center; }
   .footer .follow-us {
     display: block;
     text-align: right; }

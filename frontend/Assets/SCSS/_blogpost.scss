@@ -3,9 +3,17 @@
   justify-content: space-between;
   align-items: center;
 
+  @include atSmall {
+    flex-direction: column;
+  }
+
   &-img,
   &-post {
     width: 50%;
+
+    @include atSmall {
+      width: 100%;
+    }
   }
 }
 
@@ -14,9 +22,17 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  @include atSmall {
+    flex-direction: column;
+  }
+
   .blog-post {
     width: 30%;
     margin: 1rem 0;
+
+    @include atSmall {
+      width: 100%;
+    }
   }
 
   .loadmore {
@@ -42,9 +58,10 @@
     display: flex;
     max-width: 90%;
     padding: 0.75rem 0;
+    flex-wrap: wrap;
 
     .item {
-      margin-right: 0.5rem;
+      margin: 0.2rem 0.5rem 0.2rem 0;
     }
   }
 

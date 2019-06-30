@@ -4,8 +4,16 @@
   font-size: 1.85rem;
   line-height: 1.4;
 
+  @include atSmall {
+    font-size: 1.35rem;
+  }
+
   &-featured {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+
+    @include atMedium {
+      font-size: 2.5rem;
+    }
   }
 
   &-primary {

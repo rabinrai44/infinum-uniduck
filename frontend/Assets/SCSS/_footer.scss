@@ -4,7 +4,13 @@
   padding: 4rem 0;
   width: 100%;
 
+  @include atSmall {
+    padding: 2rem 0;
+  }
+
   .site-copyright {
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
   .follow-us {
