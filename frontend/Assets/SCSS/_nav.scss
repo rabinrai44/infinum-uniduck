@@ -1,10 +1,64 @@
 .navbar {
   width: 100%;
+
+  .menu-icon {
+    width: 8%;
+    width: 1.25rem;
+    height: 1.1875rem;
+    position: absolute;
+    top: 1.35rem;
+    right: 1.25rem;
+    z-index: 10;
+    cursor: pointer;
+    margin: 0 auto;
+
+    @mixin atSmall {
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 0;
+      transition: all 0.3s ease-out;
+    }
+
+    &-middle {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      width: 1.2rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 50%;
+      transition: all 0.3s ease-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 100%;
+      transition: all 0.3s ease-out;
+    }
+  }
 }
 .logo {
   display: flex;
   align-items: center;
   width: 30%;
+
+  @include atSmall {
+    width: 100%;
+  }
 }
 
 .navbar-nav {
@@ -12,6 +66,13 @@
   width: 70%;
   justify-content: flex-end;
   align-items: center;
+
+  @include atSmall {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
   li {
     padding: 0.5rem;

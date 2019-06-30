@@ -24,6 +24,12 @@
   font-family: museo_sans_rounded900;
   src: url(../Fonts/MuseoSansRounded-900.otf) format("opentype"); }
 
+/******** MIXIN - Media Queries ********/
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 html,
 body {
   color: #858585;
@@ -31,16 +37,22 @@ body {
   font-size: 1rem;
   line-height: 1.7; }
 
-.text-center {
-  text-align: center !important; }
-
 main,
 section {
   padding: 4rem 0;
   width: 100%; }
 
+.text-center {
+  text-align: center !important; }
+
 .primary-text {
   color: #dc4ba3; }
+
+@media only screen and (max-width: 600px) {
+  .flex-item-column {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0; } }
 
 html {
   box-sizing: border-box;
@@ -117,17 +129,65 @@ a {
 
 .navbar {
   width: 100%; }
+  .navbar .menu-icon {
+    width: 8%;
+    width: 1.25rem;
+    height: 1.1875rem;
+    position: absolute;
+    top: 1.35rem;
+    right: 1.25rem;
+    z-index: 10;
+    cursor: pointer;
+    margin: 0 auto; }
+    .navbar .menu-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: #dc4ba3;
+      transform-origin: 0 0;
+      transition: all 0.3s ease-out; }
+    .navbar .menu-icon-middle {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      width: 1.2rem;
+      height: 0.25rem;
+      background-color: #dc4ba3;
+      transform-origin: 0 50%;
+      transition: all 0.3s ease-out; }
+    .navbar .menu-icon::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: #dc4ba3;
+      transform-origin: 0 100%;
+      transition: all 0.3s ease-out; }
 
 .logo {
   display: flex;
   align-items: center;
   width: 30%; }
+  @media only screen and (max-width: 600px) {
+    .logo {
+      width: 100%; } }
 
 .navbar-nav {
   display: flex;
   width: 70%;
   justify-content: flex-end;
   align-items: center; }
+  @media only screen and (max-width: 600px) {
+    .navbar-nav {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%; } }
   .navbar-nav li {
     padding: 0.5rem; }
   .navbar-nav .nav-link {

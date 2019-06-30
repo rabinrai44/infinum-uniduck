@@ -6,16 +6,24 @@ body {
   line-height: 1.7;
 }
 
-.text-center {
-  text-align: center !important;
-}
-
 main,
 section {
   padding: 4rem 0;
   width: 100%;
 }
 
+// Helper classes
+.text-center {
+  text-align: center !important;
+}
 .primary-text {
   color: $primary_color;
+}
+
+.flex-item-column {
+  @include atSmall {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+  }
 }
