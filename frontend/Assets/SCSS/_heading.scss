@@ -1,6 +1,8 @@
 .heading {
+  color: darken($secondary_color, 20%);
   font-family: $msr500;
   font-size: 1.85rem;
+  line-height: 1.4;
 
   &-featured {
     font-size: 2.5rem;

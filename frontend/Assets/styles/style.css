@@ -26,10 +26,10 @@
 
 html,
 body {
-  font-family: museo_sans_rounded300, sans-serif; }
-
-h3 {
-  font-size: 1.2rem; }
+  color: #858585;
+  font-family: museo_sans_rounded300, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7; }
 
 .text-center {
   text-align: center !important; }
@@ -38,6 +38,9 @@ main,
 section {
   padding: 4rem 0;
   width: 100%; }
+
+.primary-text {
+  color: #dc4ba3; }
 
 html {
   box-sizing: border-box;
@@ -70,6 +73,9 @@ img {
   max-width: 100%;
   height: auto; }
 
+a {
+  text-decoration: none; }
+
 .icon {
   margin-right: 0.2rem; }
 
@@ -95,7 +101,7 @@ img {
   .btn-small {
     background-color: #e6e6e6;
     color: #999999;
-    padding: 0.4rem 1rem;
+    padding: 0.1rem 0.5rem;
     font-family: museo_sans_rounded300;
     text-transform: capitalize; }
     .btn-small:hover {
@@ -130,8 +136,10 @@ img {
   max-width: 1236px; }
 
 .heading {
+  color: #666666;
   font-family: museo_sans_rounded500;
-  font-size: 1.85rem; }
+  font-size: 1.85rem;
+  line-height: 1.4; }
   .heading-featured {
     font-size: 2.5rem; }
   .heading-primary {
@@ -185,6 +193,7 @@ img {
 
 .meta-date {
   color: #b3b3b3;
+  font-family: museo_sans_rounded500;
   font-size: 0.9375rem;
   padding-left: 0.1rem; }
 
