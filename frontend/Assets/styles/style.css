@@ -198,3 +198,15 @@ img {
   padding: 0.75rem 0; }
   .meta-footer .meta-like {
     margin-right: 0.5rem; }
+
+.footer {
+  background-color: #f3f3f3;
+  border-top: 1px solid #dadada;
+  padding: 4rem 0;
+  width: 100%; }
+  .footer .follow-us {
+    display: block;
+    text-align: right; }
+  .footer .container {
+    justify-content: space-between;
+    align-items: center; }

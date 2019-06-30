@@ -1,0 +1,19 @@
+.footer {
+  background-color: $light_white;
+  border-top: 1px solid darken($light_white, 10%);
+  padding: 4rem 0;
+  width: 100%;
+
+  .site-copyright {
+  }
+
+  .follow-us {
+    display: block;
+    text-align: right;
+  }
+
+  .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
