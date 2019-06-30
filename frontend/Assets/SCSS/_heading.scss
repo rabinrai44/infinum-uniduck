@@ -1,7 +1,12 @@
 .heading {
-  font-size: 1.5rem;
+  font-family: $msr500;
+  font-size: 1.85rem;
 
   &-featured {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  &-primary {
+    color: $primary_color !important;
   }
 }
