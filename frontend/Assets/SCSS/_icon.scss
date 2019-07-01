@@ -1,0 +1,15 @@
+.icon {
+  display: inline-block;
+  margin: 0 0.2rem -0.2rem 0;
+  height: 1rem;
+  width: 1rem;
+  background-repeat: no-repeat !important;
+
+  &-heart {
+    background: url('../Icons/ic-heart.svg');
+  }
+
+  &-comment {
+    background: url('../Icons/ic-comment.svg');
+  }
+}

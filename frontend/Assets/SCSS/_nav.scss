@@ -1,0 +1,110 @@
+.navbar {
+  width: 100%;
+
+  .menu-icon {
+    display: none;
+    width: 8%;
+    width: 1.25rem;
+    height: 1.1875rem;
+    position: absolute;
+    top: 1.35rem;
+    right: 1.25rem;
+    z-index: 10;
+    cursor: pointer;
+    margin: 0 auto;
+
+    @include atSmall {
+      display: block;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 0;
+      transition: all 0.3s ease-out;
+    }
+
+    &-middle {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      width: 1.2rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 50%;
+      transition: all 0.3s ease-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 1.5625rem;
+      height: 0.25rem;
+      background-color: $primary_color;
+      transform-origin: 0 100%;
+      transition: all 0.3s ease-out;
+    }
+
+    // close icon should change style
+    &-close-x {
+      &::before {
+        transform: rotate(45deg) scaleX(1.25) translateY(-2px);
+      }
+
+      .menu-icon-middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) scale(1.25) translateY(2px);
+      }
+    }
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 30%;
+
+  @include atSmall {
+    width: 100%;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  width: 70%;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include atSmall {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    display: none;
+  }
+
+  li {
+    padding: 0.5rem;
+  }
+
+  .nav-link {
+    font-family: $msr700;
+    text-decoration: none;
+  }
+}
+
+.show-navbar-nav {
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}

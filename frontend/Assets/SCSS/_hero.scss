@@ -1,0 +1,40 @@
+.hero {
+  width: 100%;
+  padding: 6rem 0;
+
+  @include atSmall {
+    padding: 4rem 0;
+  }
+
+  &-content {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+.hero-title {
+  color: $primary_color;
+  text-align: center;
+  font-size: 3.5rem;
+
+  @include atSmall {
+    font-size: 2rem;
+  }
+}
+
+.search-bar {
+  width: 100%;
+
+  &-input {
+    background: url('../Icons/ic-search.svg');
+    background-repeat: no-repeat;
+    background-position: 1%;
+    border: none;
+    border-bottom: 1px solid lighten($secondary_color, 30%);
+    font-size: 1rem;
+    height: 50px;
+    padding-left: 25px;
+  }
+}
