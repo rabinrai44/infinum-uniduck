@@ -2,6 +2,7 @@
   width: 100%;
 
   .menu-icon {
+    display: none;
     width: 8%;
     width: 1.25rem;
     height: 1.1875rem;
@@ -12,7 +13,8 @@
     cursor: pointer;
     margin: 0 auto;
 
-    @mixin atSmall {
+    @include atSmall {
+      display: block;
     }
 
     &::before {
@@ -49,6 +51,22 @@
       transform-origin: 0 100%;
       transition: all 0.3s ease-out;
     }
+
+    // close icon should change style
+    &-close-x {
+      &::before {
+        transform: rotate(45deg) scaleX(1.25) translateY(-2px);
+      }
+
+      .menu-icon-middle {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) scale(1.25) translateY(2px);
+      }
+    }
   }
 }
 .logo {
@@ -72,6 +90,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    display: none;
   }
 
   li {
@@ -82,4 +102,9 @@
     font-family: $msr700;
     text-decoration: none;
   }
+}
+
+.show-navbar-nav {
+  display: flex;
+  transition: all 0.3s ease-in-out;
 }
