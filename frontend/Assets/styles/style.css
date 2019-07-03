@@ -98,6 +98,13 @@ a {
     background: url("../Icons/ic-heart.svg"); }
   .icon-comment {
     background: url("../Icons/ic-comment.svg"); }
+  .icon-ios, .icon-unicorn {
+    height: 1.3rem;
+    width: 1.2rem; }
+  .icon-ios {
+    background: url("../Icons/ic-apple.svg"); }
+  .icon-unicorn {
+    background: url("../Icons/ic-unicorn.svg"); }
 
 .btn {
   border: none;

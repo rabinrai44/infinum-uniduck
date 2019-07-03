@@ -12,4 +12,17 @@
   &-comment {
     background: url('../Icons/ic-comment.svg');
   }
+
+  &-ios,
+  &-unicorn {
+    height: 1.3rem;
+    width: 1.2rem;
+  }
+  &-ios {
+    background: url('../Icons/ic-apple.svg');
+  }
+
+  &-unicorn {
+    background: url('../Icons/ic-unicorn.svg');
+  }
 }
