@@ -12,9 +12,12 @@
     <nav class="navbar">
       <div class="container flex-item-column">
         <div class="logo">
-          <a href="/">
-            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Images/Logo.png" alt="Uniduck Logo" />
-          </a>
+          <?php if (has_custom_logo()) : 
+            the_custom_logo();
+            else: ?>
+            <h1><a href="<?php echo site_url(''); ?>"><?php echo get_bloginfo('name'); ?> </a></h1>
+           <?php endif; ?>
+
         </div>
         <ul class="navbar-nav" id="navbar_nav">
           <li>

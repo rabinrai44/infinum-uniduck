@@ -1,7 +1,11 @@
 <footer class="footer">
     <div class="container flex-item-column">
     <div class="site-copyright">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Images/Logo.png" alt="site-logo" />
+        <?php if (has_custom_logo()) : 
+            the_custom_logo();
+            else: ?>
+            <h1><a href="<?php echo site_url(''); ?>"><?php echo get_bloginfo('name'); ?> </a></h1>
+           <?php endif; ?>
         <p>&copy; 2019 Uniduck All rights reserved.</p>
     </div>
     <div class="follow-us">

@@ -15,10 +15,22 @@ add_action('wp_enqueue_scripts', 'uniduck_setup_files');
 /**
  * @uniduck_init()
  * Theme support
- * custom_log, post thumbnail, title tag, html5 and etc.
+ * custom_log, post thumbnail, title tag, comment-form, comment-list, html5 and etc.
  */
 function uniduck_init() {
+    // Default logo style
+    $logo = array(
+        'height' => 100,
+        'width' => 260,
+        'flex-height' => true,
+        'header-text' => array('site-title', 'site-description'),
+    );
+    add_theme_support('custom-logo', $logo);
     add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+    add_theme_support('html5', 
+        array('comment-list', 'comment-form', 'search-form')
+    );
 }
 
 add_action('after_setup_theme', 'uniduck_init');
