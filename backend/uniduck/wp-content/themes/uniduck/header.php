@@ -13,7 +13,7 @@
       <div class="container flex-item-column">
         <div class="logo">
           <a href="/">
-            <img src="Assets/Images/Logo.png" alt="Uniduck Logo" />
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Images/Logo.png" alt="Uniduck Logo" />
           </a>
         </div>
         <ul class="navbar-nav" id="navbar_nav">
