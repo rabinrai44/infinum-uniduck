@@ -19,25 +19,13 @@
            <?php endif; ?>
 
         </div>
-        <ul class="navbar-nav" id="navbar_nav">
-          <li>
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link">
-              <button class="btn btn-primary">
-                <span class="icon icon-ios"></span> Get for IOS
-              </button></a
-            >
-          </li>
-          <li>
-            <a href="#" class="nav-link">
-              <button class="btn">
-                <span class="icon icon-unicorn"></span> Unicorn Owners
-              </button></a
-            >
-          </li>
-        </ul>
+        <?php
+          wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'menu_class' => 'navbar-nav'
+          ));
+        ?>
+         
         <div class="menu-icon" id="menu_icon">
           <div class="menu-icon-middle"></div>
         </div>

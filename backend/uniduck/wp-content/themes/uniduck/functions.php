@@ -36,6 +36,21 @@ function uniduck_init() {
 add_action('after_setup_theme', 'uniduck_init');
 
 /**
+ * @register_uniduck_menus()
+ * Allows user to create and display the menu for the theme 
+ */
+function register_uniduck_menus() {
+    register_nav_menus(
+        array(
+            'primary' => __('Primary Menu'),
+            'secondary' => __('Secondary Menu')
+        )
+        );
+}
+add_action('init', 'register_uniduck_menus');
+
+
+/**
  * @add_class_the_tags()
  * Customize the tags link by custom class
  */
