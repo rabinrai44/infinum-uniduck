@@ -46,4 +46,50 @@ function add_class_the_tags($html){
 }
 add_filter('the_tags','add_class_the_tags',10,1);
 
+
+/**
+ * @uniduck_custom_meta()
+ * Custom meta features for the post
+ */
+function uniduck_custom_meta() {
+    add_meta_box('uniduck_meta', __('Featured Posts', 'uniduck-textdomain'), 'uniduck_meta_callback', 'post');
+}
+
+function uniduck_meta_callback($post) {
+    $featured = get_post_meta($post->ID);
+    ?>
+    <div class="uniduck-row-content">
+        <label for="meta-checkbox">
+            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes"
+             <?php if (isset($featured['meta-checkbox'])) checked($featured['meta-checkbox'][0], 'yes'); ?>
+             >
+             <?php _e('Featured this post', 'uniduck-textdomain') ?>
+        </label>
+    </div>
+<?php 
+}
+add_action('add_meta_boxes', 'uniduck_custom_meta');
+
+
+/** 
+ * @uniduck_meta_save()
+ * Saves the custom meta input
+*/
+function uniduck_meta_save($post_id) {
+    // checks save status
+    $is_autosave = wp_is_post_autosave($post_id);
+    $is_revision = wp_is_post_revision($post_id);
+    $is_valid_once = (isset($_POST['uniduck_once']) && 
+             wp_verify_once($_POST['uniduck_once'], basename(__FILE__) )) ? 'true' : 'false';
+    
+    // check for input and save
+    if (isset($_POST['meta-checkbox'])) {
+        update_post_meta($post_id, 'meta-checkbox', 'yes');
+    } else {
+        update_post_meta($post_id, 'meta-checkbox', '');
+    }
+}
+
+add_action('save_post', 'uniduck_meta_save');
+
 ?>
