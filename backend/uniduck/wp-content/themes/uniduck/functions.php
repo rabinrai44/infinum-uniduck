@@ -35,4 +35,15 @@ function uniduck_init() {
 
 add_action('after_setup_theme', 'uniduck_init');
 
+/**
+ * @add_class_the_tags()
+ * Customize the tags link by custom class
+ */
+function add_class_the_tags($html){
+    $postid = get_the_ID();
+    $html = str_replace('<a','<a class="btn btn-small"', $html);
+    return $html;
+}
+add_filter('the_tags','add_class_the_tags',10,1);
+
 ?>
