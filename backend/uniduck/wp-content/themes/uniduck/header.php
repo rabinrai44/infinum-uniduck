@@ -22,10 +22,13 @@
         <?php
           wp_nav_menu(array(
             'theme_location' => 'primary',
+            'container' => false,
             'menu_class' => 'navbar-nav'
           ));
         ?>
-         
+        <!-- TODO: should be display buttons -->
+        
+       
         <div class="menu-icon" id="menu_icon">
           <div class="menu-icon-middle"></div>
         </div>
