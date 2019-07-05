@@ -107,4 +107,24 @@ function uniduck_meta_save($post_id) {
 
 add_action('save_post', 'uniduck_meta_save');
 
+
+/** 
+ * @special_nav_item_class()
+ * Add a class nav-item for the nav items
+ * If found current-menu-item then add nav-item-active class
+*/
+function special_nav_item_class ($classes, $item) {
+    
+    $classes[] = 'nav-item';
+    
+    if (in_array('current-menu-item', $classes) ){
+        
+        $classes[] = 'nav-item-active';
+        
+    }
+    
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_item_class' , 10 , 2);
+
 ?>
