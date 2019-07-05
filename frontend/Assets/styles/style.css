@@ -97,12 +97,13 @@ a {
   .icon-comment {
     background: url("../Icons/ic-comment.svg"); }
   .icon-ios, .icon-unicorn {
-    height: 1.3rem;
-    width: 1.2rem; }
+    background-repeat: no-repeat;
+    background-position: 1.25rem !important;
+    padding-left: 2.75rem !important; }
   .icon-ios {
-    background: url("../Icons/ic-apple.svg"); }
+    background-image: url("../Icons/ic-apple.svg"); }
   .icon-unicorn {
-    background: url("../Icons/ic-unicorn.svg"); }
+    background-image: url("../Icons/ic-unicorn.svg"); }
 
 .btn {
   border: none;
@@ -205,15 +206,14 @@ a {
       align-items: center;
       width: 100%;
       display: none; } }
-  .navbar-nav li {
-    padding: 0.5rem; }
-  .navbar-nav .nav-link {
-    font-family: museo_sans_rounded700;
-    text-decoration: none; }
-
-.show-navbar-nav {
-  display: flex;
-  transition: all 0.3s ease-in-out; }
+  .navbar-nav .nav-item {
+    margin: 0.5rem; }
+    .navbar-nav .nav-item a {
+      font-family: museo_sans_rounded700;
+      text-decoration: none; }
+  .navbar-nav .show-navbar-nav {
+    display: flex;
+    transition: all 0.3s ease-in-out; }
 
 .container {
   display: flex;

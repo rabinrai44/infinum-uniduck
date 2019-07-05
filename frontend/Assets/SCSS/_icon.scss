@@ -15,14 +15,15 @@
 
   &-ios,
   &-unicorn {
-    height: 1.3rem;
-    width: 1.2rem;
+    background-repeat: no-repeat;
+    background-position: 1.25rem !important;
+    padding-left: 2.75rem !important;
   }
   &-ios {
-    background: url('../Icons/ic-apple.svg');
+    background-image: url('../Icons/ic-apple.svg');
   }
 
   &-unicorn {
-    background: url('../Icons/ic-unicorn.svg');
+    background-image: url('../Icons/ic-unicorn.svg');
   }
 }
