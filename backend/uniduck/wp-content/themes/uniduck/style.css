@@ -123,21 +123,22 @@ a {
   background-repeat: no-repeat !important;
 }
 .icon-heart {
-  background: url('Assets/Icons/ic-heart.svg');
+  background-image: url('Assets/Icons/ic-heart.svg');
 }
 .icon-comment {
-  background: url('Assets/Icons/ic-comment.svg');
+  background-image: url('Assets/Icons/ic-comment.svg');
 }
 .icon-ios,
 .icon-unicorn {
-  height: 1.3rem;
-  width: 1.2rem;
+  background-repeat: no-repeat;
+  background-position: 1.25rem !important;
+  padding-left: 2.75rem !important;
 }
 .icon-ios {
-  background: url('Assets/Icons/ic-apple.svg');
+  background-image: url('Assets/Icons/ic-apple.svg');
 }
 .icon-unicorn {
-  background: url('Assets/Icons/ic-unicorn.svg');
+  background-image: url('Assets/Icons/ic-unicorn.svg');
 }
 
 .btn {
@@ -172,6 +173,11 @@ a {
 }
 .btn-small:hover {
   color: #ffffff;
+}
+
+.icon-ios-btn-primary {
+  background-image: url(Assets/Icons/ic-apple.svg);
+  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -263,10 +269,10 @@ a {
     display: none;
   }
 }
-.navbar-nav li {
-  padding: 0.5rem;
+.navbar-nav .nav-item {
+  margin: 0.5rem;
 }
-.navbar-nav .nav-link {
+.navbar-nav .nav-item a {
   font-family: museo_sans_rounded700;
   text-decoration: none;
 }
