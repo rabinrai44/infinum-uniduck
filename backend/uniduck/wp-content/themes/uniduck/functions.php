@@ -7,6 +7,7 @@
  */
 function uniduck_setup_files() {
     wp_enqueue_style('uniduck_style', get_stylesheet_uri(), NULL, microtime(), all);
+    wp_enqueue_script('jquery', get_template_directory_uri(), 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', array('jquery'), '3.4.1', false);
     wp_enqueue_script('uniduck_javascript', get_theme_file_uri('Assets/JS/main.js'), NULL, microtime(), true);
 }
 
@@ -87,8 +88,8 @@ add_action('add_meta_boxes', 'uniduck_custom_meta');
 
 
 /** 
- * @uniduck_meta_save()
- * Saves the custom meta input
+* @uniduck_meta_save()
+* Saves the custom meta input
 */
 function uniduck_meta_save($post_id) {
     // checks save status
@@ -109,9 +110,9 @@ add_action('save_post', 'uniduck_meta_save');
 
 
 /** 
- * @special_nav_item_class()
- * Add a class nav-item for the nav items
- * If found current-menu-item then add nav-item-active class
+* @special_nav_item_class()
+* Add a class nav-item for the nav items
+* If found current-menu-item then add nav-item-active class
 */
 function special_nav_item_class ($classes, $item) {
     
@@ -128,7 +129,7 @@ function special_nav_item_class ($classes, $item) {
 add_filter('nav_menu_css_class' , 'special_nav_item_class' , 10 , 2);
 
 /**
- * @new_excerpt_more()
+* @new_excerpt_more()
 * Replaces the excerpt "more" text by a link.
 */
 function new_excerpt_more($more) {
@@ -137,4 +138,69 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+/**
+ * @uniduck_custom_exerpt_lenth()
+ * Filter except length to 45 words.
+ * Uniduck custom excerpt length
+ */ 
+function uniduck_custom_excerpt_length( $length ) {
+return 45;
+}
+add_filter( 'excerpt_length', 'uniduck_custom_excerpt_length', 999 );
+
+/**
+ * @load_posts_by_ajax_callback()
+ * append the posts when request fire-up 
+ * if more posts in database
+*/
+function uniduck_load_posts_by_ajax_callback() {
+    check_ajax_referer('load_more_posts', 'security');
+    $paged = $_POST['page'];
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => '3',
+        'paged' => $paged,
+    );
+
+    $my_posts = new WP_Query( $args );
+
+    if ( $my_posts->have_posts() ) :
+       
+        while ( $my_posts->have_posts() ) : 
+                $my_posts->the_post(); ?>
+
+             <article class="blog-post">
+                <div class="meta-featured-img">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <div class="meta-header">
+                <span class="meta-date"><?php the_date(); ?></span>
+                <h3 class="heading">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
+                <div class="meta-tag">
+                <?php the_tags('<div class="item">', '</div><div class="item">', '</div>'); ?>
+                </div>
+                </div>
+                <div class="meta-content">            
+                    <?php the_excerpt(); ?>
+                </div>
+                <div class="meta-footer">
+                <div class="meta-like">
+                    <span class="icon icon-heart"></span>
+                    37 faves
+                </div>
+                <div class="meta-comment">
+                    <span class="icon icon-comment"></span> <?php echo get_comments_number(get_the_ID()); ?> comments
+                </div>
+                </div>
+            </article>
+        <?php 
+        endwhile;
+    endif; 
+    wp_die();
+}
+add_action('wp_ajax_load_posts_by_ajax', 'uniduck_load_posts_by_ajax_callback');
+add_action('wp_ajax_nopriv_load_posts_by_ajax', 'uniduck_load_posts_by_ajax_callback');
 ?>

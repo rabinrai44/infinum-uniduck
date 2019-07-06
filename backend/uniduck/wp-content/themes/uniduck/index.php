@@ -34,13 +34,7 @@
                   </div>
                 </div>
                 <div class="meta-content">
-                  <p>
-                  <?php the_excerpt();  ?>...<a
-                      href="<?php the_permalink(); ?>"
-                      class="readmore primary-text"
-                      >Read more</a
-                    >
-                  </p>
+                  <?php the_excerpt();  ?>
                 </div>
                 <div class="meta-footer">
                   <div class="meta-like">
@@ -62,8 +56,21 @@
       <div class="container">
         <!-- Blog Main -->
         <section class="blog-posts">
-        <?php while(have_posts()) { 
-            the_post(); ?>
+        <?php
+
+        $args = array(
+          'post_type' => 'post',
+          'post_status' => 'publish',
+          'posts_per_page' => 3
+        );
+
+        $posts = new WP_Query($args);
+
+        if ($posts-> have_posts()) :
+
+        while($posts-> have_posts()): 
+              $posts-> the_post(); 
+        ?>
           <article class="blog-post">
             <div class="meta-featured-img">
               <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="img-unicorn" />
@@ -90,17 +97,53 @@
               </div>
             </div>
           </article>
+
         <?php 
-          }
+          endwhile;
+        endif;
         wp_reset_query(); 
          ?>
-
         </section>
       </div>
-          <div class="loadmore">
-            <a href="#" class="btn btn-primary btn-loadmore">Load More</a>
-          </div>
-    </main>
 
+  <div class="container">
+    <div class="loadmore btn btn-primary btn-loadmore"><?php echo $count; ?> Load More</div>
+  </div>
+</main>
+
+<!-- Load more post button works script | Ajax request -->
+<script type="text/javascript">
+    var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+    var page = 2;
+    jQuery(function($) {
+      $('body').on('click', '.loadmore', function() {
+        var data = {
+          action: 'load_posts_by_ajax',
+          page: page,
+          security: '<?php echo wp_create_nonce("load_more_posts"); ?>'
+        };
+
+        // show 'Loading...' message while ajax request
+        $('.loadmore').html('Loading...');
+        setTimeout(() => {
+          $.post(ajaxurl, data, function(response) {
+
+            // show load more if still have a post
+            if (response) {
+              $('.loadmore').html('Load more');
+            }
+
+            // hide button if not more post to load
+            if (response === '') {
+              $('.loadmore').hide();
+            }
+            $('.blog-posts').append(response);
+            page++;
+          });
+        }, 200);
+      });
+    });
+
+</script>
 
 <?php get_footer(); ?>

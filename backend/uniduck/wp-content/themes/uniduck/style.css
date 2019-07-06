@@ -115,6 +115,10 @@ a {
   text-decoration: none;
 }
 
+.loadmore {
+  margin: 0 auto;
+}
+
 .icon {
   display: inline-block;
   margin: 0 0.2rem -0.2rem 0;
