@@ -89,8 +89,8 @@ a {
 .icon {
   display: inline-block;
   margin: 0 0.2rem -0.2rem 0;
-  height: 1rem;
-  width: 1rem;
+  height: 1.2rem;
+  width: 1.3rem;
   background-repeat: no-repeat !important; }
   .icon-heart {
     background: url("../Icons/ic-heart.svg"); }
@@ -104,6 +104,12 @@ a {
     background-image: url("../Icons/ic-apple.svg"); }
   .icon-unicorn {
     background-image: url("../Icons/ic-unicorn.svg"); }
+  .icon-facebook {
+    background-image: url("../Icons/ic-facebook.svg"); }
+  .icon-twitter {
+    background-image: url("../Icons/ic-twitter.svg"); }
+  .icon-instagram {
+    background-image: url("../Icons/ic-instagram.svg"); }
 
 .btn {
   border: none;
@@ -326,6 +332,9 @@ a {
   padding: 0.75rem 0; }
   .meta-footer .meta-like {
     margin-right: 0.5rem; }
+  .meta-footer .meta-like .icon,
+  .meta-footer .meta-comment .icon {
+    height: 1rem !important; }
 
 .footer {
   background-color: #f3f3f3;

@@ -75,5 +75,13 @@
     .meta-like {
       margin-right: 0.5rem;
     }
+
+    // override icon height
+    .meta-like,
+    .meta-comment {
+      .icon {
+        height: 1rem !important;
+      }
+    }
   }
 }
