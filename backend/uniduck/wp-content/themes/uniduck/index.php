@@ -77,14 +77,8 @@
                <?php the_tags('<div class="item">', '</div><div class="item">', '</div>'); ?>
               </div>
             </div>
-            <div class="meta-content">
-              <p>
-                <?php the_excerpt(); ?>...<a
-                  href="<?php the_permalink(); ?>"
-                  class="readmore primary-text"
-                  >Read more</a
-                >
-              </p>
+            <div class="meta-content">            
+                <?php the_excerpt(); ?>
             </div>
             <div class="meta-footer">
               <div class="meta-like">
