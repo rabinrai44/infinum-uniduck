@@ -96,7 +96,10 @@
               </div>
             </div>
           </article>
-        <?php } ?>
+        <?php 
+          }
+        wp_reset_query(); 
+         ?>
 
         </section>
       </div>
