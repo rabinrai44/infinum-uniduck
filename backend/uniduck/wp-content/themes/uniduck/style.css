@@ -122,8 +122,8 @@ a {
 .icon {
   display: inline-block;
   margin: 0 0.2rem -0.2rem 0;
-  height: 1rem;
-  width: 1rem;
+  height: 1.2rem;
+  width: 1.3rem;
   background-repeat: no-repeat !important;
 }
 .icon-heart {
@@ -143,6 +143,18 @@ a {
 }
 .icon-unicorn {
   background-image: url('Assets/Icons/ic-unicorn.svg');
+}
+
+.icon-facebook {
+  background-image: url('Assets/Icons/ic-facebook.svg');
+}
+
+.icon-twitter {
+  background-image: url('Assets/Icons/ic-twitter.svg');
+}
+
+.icon-instagram {
+  background-image: url('Assets/Icons/ic-instagram.svg');
 }
 
 .btn {
@@ -433,6 +445,10 @@ a {
 }
 .meta-footer .meta-like {
   margin-right: 0.5rem;
+}
+.meta-footer .meta-like .icon,
+.meta-footer .meta-comment .icon {
+  height: 1rem !important;
 }
 
 .footer {

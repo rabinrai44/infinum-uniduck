@@ -51,6 +51,35 @@ function register_uniduck_menus() {
 add_action('init', 'register_uniduck_menus');
 
 
+/** 
+* @uniduck_widgets_init()
+* uniduck widgets init
+* create a widgets
+* register a widgets 
+*/
+function uniduck_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Right Sidebar', 'uniduck' ),
+        'id' => 'right-sidebar',
+        'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'uniduck' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar(array(
+        'name' => __('Footer Followus Link', 'uniduck'),
+        'id' => 'footer-followus-link',
+        'description' => __('The footer follow us link sidebar appear on the bottom of the page with social icon and lithe nk', 'uniduck'),
+        'before_widget' => '<div id="%1$s" class="widget follow-us %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => false,
+        'after_title' => false,
+
+    ));
+}
+add_action('widgets_init', 'uniduck_widgets_init');
+
 /**
  * @add_class_the_tags()
  * Customize the tags link by custom class
