@@ -4,9 +4,9 @@
         <?php if (has_custom_logo()) : 
             the_custom_logo();
             else: ?>
-            <h1><a href="<?php echo site_url(''); ?>"><?php echo get_bloginfo('name'); ?> </a></h1>
+            <h3><?php echo bloginfo('name'); ?></h3>
            <?php endif; ?>
-        <p>&copy; 2019 Uniduck All rights reserved.</p>
+        <p>&copy; <?php echo date('Y') . " "; echo bloginfo('name'); ?>. All rights reserved.</p>
     </div>
     <?php dynamic_sidebar('footer-followus-link'); ?>
     </div>
