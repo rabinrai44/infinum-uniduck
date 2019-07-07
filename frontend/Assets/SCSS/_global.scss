@@ -20,10 +20,15 @@ section {
   color: $primary_color;
 }
 
-.flex-item-column {
+.flex-item-column-at-small {
   @include atSmall {
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
   }
+}
+
+.flex-item-column {
+  flex-direction: column;
+  align-items: center;
 }
