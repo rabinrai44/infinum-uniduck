@@ -464,7 +464,7 @@ a {
 .blog-header {
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/Assets/Images/img-unicorn@2x.png');
+    url('Assets/Images/img-unicorn@2x.png');
   background-size: cover;
   background-position: top;
   display: flex;
