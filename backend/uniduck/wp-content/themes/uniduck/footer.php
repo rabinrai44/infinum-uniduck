@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container flex-item-column">
+    <div class="container flex-item-column-at-small">
     <div class="site-copyright">
         <?php if (has_custom_logo()) : 
             the_custom_logo();

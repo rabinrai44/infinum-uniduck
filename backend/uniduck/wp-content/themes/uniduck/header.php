@@ -10,7 +10,7 @@
 
   <body>
     <nav class="navbar">
-      <div class="container flex-item-column">
+      <div class="container flex-item-column-at-small">
         <div class="logo">
           <?php if (has_custom_logo()) : 
             the_custom_logo();
