@@ -24,13 +24,7 @@ get_header(); ?>
 
              }
             ?>
-          <form class="search-bar">
-            <input
-              type="text"
-              class="search-bar-input"
-              placeholder="Search blog"
-            />
-          </form>
+            <?php get_search_form(); ?> 
         </div>
       </div>
   </header>
