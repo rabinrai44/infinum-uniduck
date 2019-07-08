@@ -143,6 +143,9 @@ a {
     text-transform: capitalize; }
     .btn-small:hover {
       color: #ffffff; }
+  .btn-loadmore {
+    margin: auto auto 4rem auto;
+    text-transform: none; }
 
 .navbar {
   width: 100%;
@@ -313,10 +316,6 @@ a {
     @media only screen and (max-width: 600px) {
       .blog-posts .blog-post {
         width: 100%; } }
-  .blog-posts .loadmore {
-    display: block;
-    text-align: center;
-    margin: 1rem auto auto auto; }
 
 .meta-date {
   color: #b3b3b3;
