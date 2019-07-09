@@ -5,7 +5,8 @@ WordPress custom theme 'uniduck'
 ## How to install on local machine
 
 ### WordPress Duplicator Plugin Package
-- Clone or download the repository 
+
+- Clone or download the repository
 - `git clone https://github.com/rabinrai44/infinum-uniduck.git`
 - go to site-transfer folder located in backend folder
 - Copy both folder and file installer.php and site_uniduck_b3a49cfe32475db41998_20190709045550_archive.zip
@@ -21,4 +22,12 @@ WordPress custom theme 'uniduck'
 - Follow the steps on the next page to finish the installation.
 - Delete the contents of wp-snapshots in the source site or once you login followed by check the box auto delete installer file after login
 
+Initial Admin Login:
+Username: `admin`
+Password: `demo#uniduck.`
+
 Now Ready to visit new site - @UNIDUCK
+
+#### Support
+
+If you have any question about the repository or installation the theme email me at rabinrai44@gmail.com
