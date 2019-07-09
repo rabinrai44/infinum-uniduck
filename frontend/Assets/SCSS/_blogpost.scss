@@ -34,12 +34,6 @@
       width: 100%;
     }
   }
-
-  .loadmore {
-    display: block;
-    text-align: center;
-    margin: 1rem auto auto auto;
-  }
 }
 
 .meta-header {
@@ -75,5 +69,111 @@
     .meta-like {
       margin-right: 0.5rem;
     }
+
+    // override icon height
+    .meta-like,
+    .meta-comment {
+      .icon {
+        height: 1rem !important;
+      }
+    }
   }
+}
+
+.blog-title {
+  color: $white;
+  font-family: $msr300;
+  font-size: 2.75rem;
+  line-height: 1.3;
+}
+
+.blog-header {
+  color: $white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/Assets/Images/img-unicorn@2x.png');
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  width: 100%;
+  height: 360px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &-content {
+    margin-bottom: 3.25rem;
+  }
+
+  .back-to-blog {
+    margin-bottom: -4.25rem;
+    a {
+      color: $white;
+    }
+  }
+}
+
+.blog-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+
+  img,
+  figure {
+    width: 100%;
+  }
+}
+
+.blog-content {
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  p,
+  h4,
+  .meta-header {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  h4 {
+    color: darken($secondary_color, 10%);
+    font-family: $msr700;
+    font-size: 1.35rem;
+    line-height: 3.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+blockquote {
+  max-width: 23.4375rem;
+  text-align: center;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  font-family: $msr500;
+  font-size: 1.35rem;
+  color: $primary_color;
+  position: relative;
+  line-height: 1.6;
+  float: left;
+
+  &::before {
+    content: '\201c';
+    font-size: 2rem;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+  &::after {
+    content: '';
+  }
+
+  p {
+    max-width: 100% !important;
+  }
+}
+
+.blockquote-right {
+  float: right;
 }

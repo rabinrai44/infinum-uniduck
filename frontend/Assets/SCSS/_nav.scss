@@ -1,5 +1,6 @@
 .navbar {
   width: 100%;
+  margin: 1.25rem 0;
 
   .menu-icon {
     display: none;
@@ -94,17 +95,16 @@
     display: none;
   }
 
-  li {
-    padding: 0.5rem;
+  .nav-item {
+    margin: 0.5rem;
+    a {
+      font-family: $msr700;
+      text-decoration: none;
+    }
   }
 
-  .nav-link {
-    font-family: $msr700;
-    text-decoration: none;
+  .show-navbar-nav {
+    display: flex;
+    transition: all 0.3s ease-in-out;
   }
-}
-
-.show-navbar-nav {
-  display: flex;
-  transition: all 0.3s ease-in-out;
 }
