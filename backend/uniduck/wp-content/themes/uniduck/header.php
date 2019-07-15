@@ -23,7 +23,8 @@
           wp_nav_menu(array(
             'theme_location' => 'primary',
             'container' => false,
-            'menu_class' => 'navbar-nav'
+            'menu_class' => 'navbar-nav',
+            'menu_id' => 'navbar_nav'
           ));
         ?>
         <!-- TODO: should be display buttons -->
