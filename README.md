@@ -11,3 +11,7 @@ Infinum-Uniduck - WP Test Assignment
 * Tap on release tab
 * Download the release file as your choice type: `.zip` or `.tar`
 * Unzip the downloaded file
+
+## Releases
+- Version 1.0 (Pre-released)
+- Version 1.0.1
